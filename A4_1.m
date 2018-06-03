@@ -79,3 +79,24 @@ for j=ny(1):1:ny(1)+IY-1
     z2=z2+1;
 end
 
+subplot(3,1,1)
+stem(nx,x)
+axis([-3,6,-3,3])
+subplot(3,1,2)
+stem(nh,h)
+axis([-3,6,-3,3])
+subplot(3,1,3)
+stem(ny,y)
+axis([-3,6,-3,3])
+
+figure
+subplot(3,1,1)
+stem(tx,x)
+axis([-0.6,1.2,-3,3])
+subplot(3,1,2)
+stem(th,h)
+axis([-0.6,1.2,-3,3])
+subplot(3,1,3)
+stem(ty,y)
+axis([-0.6,1.2,-3,3])
+
