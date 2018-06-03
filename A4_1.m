@@ -44,12 +44,38 @@ end
 %indexachse Ende
 
 
+z2=1;
 
+for j=ny(1):1:ny(1)+IY-1
+    
+    z1 = 1; % Zähler
+    eintrag = 0;
+    for i=nh(1):1:nh(1)+IH
+        h_ind = find(nh == i);
 
-zaehler = 1;
-for i=nh(1):1:nh(1)+IH
-    y(zaehler) = h(nh==i) * x(nx==(-2-(nh==i)));
-    zaehler = zaehler+1;
+        temp = j-i;
+        x_ind =find(nx == temp);
+
+        if isempty(h_ind)
+            E(z1) = 0;
+
+        elseif isempty(x_ind)
+            E(z1) = 0;
+
+        else 
+
+            E(z1) = h(h_ind) * x(x_ind); 
+        end
+
+        eintrag = eintrag+E(z1);
+        z1 = z1+1;
+    end
+    
+    
+    
+    
+    
+    y(z2) = eintrag;
+    z2=z2+1;
 end
-zaehler = zaehler-1;
 
